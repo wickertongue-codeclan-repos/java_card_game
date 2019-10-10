@@ -8,13 +8,13 @@ import static org.junit.Assert.assertEquals;
 public class DeckTest {
     private Deck deck;
     private Card card;
-    private ArrayList<Card> cards;
+    private ArrayList<Card> cardDeck;
 
     @Before
     public void before() {
         card = new Card(SuitType.HEARTS, RankType.JACK);
-        cards = new ArrayList<Card>();
-        deck = new Deck("Decklan", cards);
+        cardDeck = new ArrayList<Card>();
+        deck = new Deck("Decklan", cardDeck);
     }
 
     @Test
@@ -29,7 +29,13 @@ public class DeckTest {
 
     @Test
     public void cardsIncreasesAsCardIsAdded() {
-        cards.add(card);
+        deck.addCardToCardDeck(card);
         assertEquals(1, deck.countCards());
+    }
+
+    @Test
+    public void canCreateFullDeckInCards() {
+        deck.createCardDeck();
+        assertEquals(52, deck.countCards());
     }
 }
