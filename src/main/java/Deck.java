@@ -6,7 +6,7 @@ public class Deck {
     private String name;
     private ArrayList<Card> cardDeck;
 
-    public Deck(String name, ArrayList<Card> cardDeck) {
+    public Deck(String name) {
         this.name = name;
         this.cardDeck = new ArrayList<Card>();
     }

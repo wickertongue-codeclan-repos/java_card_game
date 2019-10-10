@@ -14,7 +14,7 @@ public class DeckTest {
     public void before() {
         card = new Card(SuitType.HEARTS, RankType.JACK);
         cardDeck = new ArrayList<Card>();
-        deck = new Deck("Decklan", cardDeck);
+        deck = new Deck("Decklan");
     }
 
     @Test
