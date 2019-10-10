@@ -38,4 +38,23 @@ public class DeckTest {
         deck.createCardDeck();
         assertEquals(52, deck.countCards());
     }
+
+    @Test
+    public void canGetCardFromDeck() {
+        deck.createCardDeck();
+        deck.shuffleCardDeck();
+        deck.dealCard();
+        assertEquals(51, deck.countCards());
+    }
+
+    @Test
+    public void dealingMoreThanOneCardFromDeckLowersDeckCount() {
+        deck.createCardDeck();
+        deck.shuffleCardDeck();
+        deck.dealCard();
+        deck.dealCard();
+        deck.dealCard();
+        assertEquals(49, deck.countCards());
+    }
+
 }
